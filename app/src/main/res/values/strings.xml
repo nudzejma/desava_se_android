@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DešavaSe</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Šifra</string>
+    <string name="action_sign_in">Prijavi se</string>
+    <string name="action_sign_in_short">Prijavi se</string>
+    <string name="action_sign_up">Nemate profil?</string>
+    <string name="btn_sign_up">Registruj se</string>
+    <string name="error_invalid_email">Email adresa nije validna.</string>
+    <string name="error_invalid_password">Šifra je prekratka</string>
+    <string name="error_incorrect_password">Šifra nije validna.</string>
+    <string name="error_field_required">Ovo polje je obavezno.</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_maps">Map</string>
+</resources>

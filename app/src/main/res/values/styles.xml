@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/desavaSe_red</item>
+        <item name="colorPrimaryDark">@color/desavaSe_red</item>
+        <item name="colorAccent">@color/desavaSe_black</item>
+    </style>
+
+    <style name="Base.TextAppearance.AppCompat.Button." parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/desavaSe_black</item>
+        <item name="colorPrimaryDark">@color/desavaSe_red</item>q
+        <item name="colorAccent">@color/desavaSe_black</item>
+    </style>
+
+    <style name="Button">
+        <item name="colorPrimary">@color/ic_launcher_background</item>
+        <item name="colorAccent">@color/desavaSe_black</item>
+    </style>
+
+    <style name="Buttons" parent="Base.TextAppearance.AppCompat.Button." >
+        <item name="colorPrimary">@color/ic_launcher_background</item>
+        <item name="colorPrimaryDark">@color/ic_launcher_background</item>
+        <item name="android:windowBackground">@color/desavaSe_black</item>
+        <item name="android:colorBackground">@color/desavaSe_black</item>
+    </style>
+
+</resources>
