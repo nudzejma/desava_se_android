@@ -12,6 +12,9 @@
     <string name="error_invalid_password">Šifra je prekratka</string>
     <string name="error_incorrect_password">Šifra nije validna.</string>
     <string name="error_field_required">Ovo polje je obavezno.</string>
+    <string name="message_title">Dešava se</string>
+    <string name="message_text">Zbog prikazivanja dešavanja na google karti potrebna nam je Vaša lokacija.</string>
+    <string name="message_btn_text">Uredu</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>

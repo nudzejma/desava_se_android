@@ -38,6 +38,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,8 +102,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
-                startActivity(intent);
+                String email = mEmailView.getText().toString();
+                String password = mPasswordView.getText().toString();
+                if (email.equals("test@test") && password.equals("test1234")) {
+                    Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(LoginActivity.this, "Korisnik ne postoji.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -113,7 +121,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         provider = locationManager.getBestProvider(new Criteria(), false);
         checkLocationPermission();
     }
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this,
@@ -128,9 +135,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
                 new AlertDialog.Builder(this)
-                        .setTitle("Title")
-                        .setMessage("MEssage")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        .setTitle(R.string.message_title)
+                        .setMessage(R.string.message_text)
+                        .setPositiveButton(R.string.message_btn_text, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //Prompt the user once explanation has been shown
@@ -154,37 +161,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return true;
         }
     }
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode,
-//                                           String permissions[], int[] grantResults) {
-//        switch (requestCode) {
-//            case MY_PERMISSIONS_REQUEST_LOCATION: {
-//                // If request is cancelled, the result arrays are empty.
-//                if (grantResults.length > 0
-//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//
-//                    // permission was granted, yay! Do the
-//                    // location-related task you need to do.
-//                    if (ContextCompat.checkSelfPermission(this,
-//                            Manifest.permission.ACCESS_FINE_LOCATION)
-//                            == PackageManager.PERMISSION_GRANTED) {
-//
-//                        //Request location updates:
-//                        locationManager.requestLocationUpdates(provider, 400, 1, (LocationListener) this);
-//                    }
-//
-//                } else {
-//
-//                    // permission denied, boo! Disable the
-//                    // functionality that depends on this permission.
-//
-//                }
-//                return;
-//            }
-//
-//        }
-//    }
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
@@ -303,6 +279,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
+
         }
     }
 
